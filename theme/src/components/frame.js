@@ -6,7 +6,7 @@ import Measure from 'react-measure'
 function Frame({children}) {
   const [height, setHeight] = React.useState('auto')
   return (
-    <FrameComponent style={{width: '100%', border: 0, height}}>
+    <FrameComponent style={{borderRadius: '4px 4px 0 0', backgroundColor:'#f5f5f5', width: '100%', border: 0, height}}>
       <FrameContextConsumer>
         {({document}) => {
           // By default, styled-components injects styles in the head of the page.

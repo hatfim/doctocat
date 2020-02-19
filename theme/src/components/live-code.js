@@ -1,6 +1,6 @@
 import {Absolute, BorderBox, Flex, Relative, Text} from '@primer/components'
 import htmlReactParser from 'html-react-parser'
-import githubTheme from 'prism-react-renderer/themes/github'
+import githubTheme from './prism-themes'
 import React from 'react'
 import reactElementToJsxString from 'react-element-to-jsx-string'
 import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live'
@@ -41,6 +41,7 @@ function LiveCode({code, language}) {
     <BorderBox
       as={Flex}
       flexDirection="column"
+      border={0}
       mb={3}
     >
       <LiveProvider
@@ -51,7 +52,10 @@ function LiveCode({code, language}) {
         <LivePreviewWrapper>
           <LivePreview />
         </LivePreviewWrapper>
-        <Relative>
+        <Relative style={{
+          borderRadius: '0 0 4px 4px',
+          border: '1px solid rgb(245, 245, 245)',
+        }}>
           <LiveEditor
             theme={githubTheme}
             ignoreTabKey={true}

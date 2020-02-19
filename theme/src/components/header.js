@@ -41,26 +41,9 @@ function Header({isSearchEnabled}) {
           >
             <StyledOcticon icon={MarkGithub} size="medium" />
           </Link>
-          <Link
-            display={[
-              // We only hide "Primer" on small viewports if a shortName is defined.
-              siteMetadata.shortName ? 'none' : 'inline-block',
-              null,
-              null,
-              'inline-block',
-            ]}
-            href="https://primer.style"
-            color="blue.4"
-            fontFamily="mono"
-          >
-            Primer
-          </Link>
 
           {siteMetadata.shortName ? (
             <>
-              <Box display={['none', null, null, 'inline-block']} mx={2}>
-                <StyledOcticon icon={ChevronRight} color="blue.4" />
-              </Box>
               <Link as={GatsbyLink} to="/" color="blue.4" fontFamily="mono">
                 {siteMetadata.shortName}
               </Link>
