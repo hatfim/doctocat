@@ -44,7 +44,7 @@ export const NavDropdownItem = styled.a`
 
   &:hover {
     color: ${themeGet('colors.white')};
-    background-color: ${themeGet('colors.blue.5')};
+    background-color: ${themeGet('colors.gray.5')};
     text-decoration: none;
   }
 `

@@ -60,6 +60,7 @@ function NavItems({items}) {
                     to={child.url}
                     activeClassName="active"
                     display="block"
+                    color="gray.7"
                     py={1}
                     mt={2}
                     fontSize={1}
