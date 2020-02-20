@@ -1,5 +1,5 @@
 {
-  "name": "@primer/gatsby-theme-doctocat",
+  "name": "@huginn/gatsby-theme-doctocat",
   "version": "0.16.9",
   "main": "index.js",
   "license": "MIT",
@@ -65,5 +65,8 @@
     "sentence-case": "^2.1.1",
     "styled-components": "^4.3.2",
     "styled-system": "^5.0.18"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
   }
 }
