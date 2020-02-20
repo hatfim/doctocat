@@ -1,5 +1,4 @@
-import {Button, StyledOcticon} from '@primer/components'
-import {Check, Clippy} from '@primer/octicons-react'
+import {Button} from '@primer/components'
 import copy from 'copy-to-clipboard'
 import React from 'react'
 

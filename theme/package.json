@@ -1,10 +1,13 @@
 {
-  "name": "@huginn/gatsby-theme-doctocat",
-  "version": "0.16.9",
+  "name": "@hatfim/gatsby-theme-doctocat",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "test": "jest"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "gatsby": "^2.13.52",
@@ -65,8 +68,5 @@
     "sentence-case": "^2.1.1",
     "styled-components": "^4.3.2",
     "styled-system": "^5.0.18"
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
   }
 }
