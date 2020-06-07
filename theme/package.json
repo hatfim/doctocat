@@ -9,6 +9,11 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
+  "repository" : {
+    "type" : "git",
+    "url": "ssh://git@github.com/hatfim/doctocat.git",
+    "directory": "theme"
+  },
   "devDependencies": {
     "gatsby": "^2.13.52",
     "react": "^16.9.0",

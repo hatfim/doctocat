@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "start": "yarn workspace docs develop",
-    "deploy": "yarn workspace @hatfim/gatsby-theme-doctocat publish --access public --no-git-tag-version"
+    "deploy": "yarn workspace @hatfim/gatsby-theme-doctocat publish --access public --no-git-tag-version --verbose"
   },
   "workspaces": [
     "theme",
