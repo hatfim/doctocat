@@ -1,4 +1,5 @@
 import {Button} from '@primer/components'
+import {CheckIcon, ClippyIcon} from '@primer/styled-octicons'
 import copy from 'copy-to-clipboard'
 import React from 'react'
 
@@ -28,6 +29,7 @@ function ClipboardCopy({value}) {
       <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" >
         <path d="M14,5v9H5V5h9m0-1H5A1,1,0,0,0,4,5v9a1,1,0,0,0,1,1h9a1,1,0,0,0,1-1V5a1,1,0,0,0-1-1Z"></path><path d="M2,9H1V2A1,1,0,0,1,2,1H9V2H2Z"></path>
       </svg>
+      {copied ? <CheckIcon color="green.5" /> : <ClippyIcon color="gray.7" />}
     </Button>
   )
 }

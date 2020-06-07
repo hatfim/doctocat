@@ -21,16 +21,16 @@
   },
   "peerDependencies": {
     "gatsby": "2.x",
-    "react": "16.9.x",
-    "react-dom": "16.9.x"
+    "react": "^16.9.x",
+    "react-dom": "^16.9.x"
   },
   "dependencies": {
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@mdx-js/mdx": "^1.0.21",
     "@mdx-js/react": "^1.0.21",
-    "@primer/components": "^15.1.1",
-    "@primer/octicons-react": "^9.1.1",
+    "@primer/components": "^16.1.0",
+    "@primer/styled-octicons": "^0.0.0-0ccdd71",
     "@styled-system/theme-get": "^5.0.12",
     "@testing-library/jest-dom": "^4.1.0",
     "@testing-library/react": "^9.1.3",
@@ -64,7 +64,7 @@
     "prism-react-renderer": "^0.1.7",
     "react-addons-text-content": "^0.0.4",
     "react-element-to-jsx-string": "^14.0.3",
-    "react-focus-on": "^3.0.6",
+    "react-focus-on": "^3.3.0",
     "react-frame-component": "^4.1.1",
     "react-helmet": "^5.2.1",
     "react-live": "^2.1.2",

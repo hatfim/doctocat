@@ -1,5 +1,5 @@
-import {Absolute, Fixed, Flex, StyledOcticon} from '@primer/components'
-import {X} from '@primer/octicons-react'
+import {Absolute, Fixed, Flex} from '@primer/components'
+import {XIcon} from '@primer/styled-octicons'
 import Downshift from 'downshift'
 import {AnimatePresence, motion} from 'framer-motion'
 import {navigate} from 'gatsby'
@@ -55,15 +55,15 @@ function MobileSearch({isOpen, onDismiss}) {
             />
             <Downshift
               inputValue={query}
-              onInputValueChange={inputValue => setQuery(inputValue)}
+              onInputValueChange={(inputValue) => setQuery(inputValue)}
               selectedItem={null}
-              onSelect={item => {
+              onSelect={(item) => {
                 if (item) {
                   navigate(item.path)
                   handleDismiss()
                 }
               }}
-              itemToString={item => (item ? item.title : '')}
+              itemToString={(item) => (item ? item.title : '')}
               stateReducer={stateReducer}
             >
               {({
@@ -81,24 +81,26 @@ function MobileSearch({isOpen, onDismiss}) {
                   })}
                 >
                   <Flex bg="gray.9" color="white" p={3} flex="0 0 auto">
-                    <DarkTextInput
-                      {...getInputProps({
-                        as: motion.input,
-                        initial: {scaleX: 0.1},
-                        animate: {scaleX: 1},
-                        exit: {scaleX: 0.1, transition: {duration: 0.1}},
-                        transition: {type: 'tween', duration: 0.2},
-                        placeholder: `Search`,
-                        width: '100%',
-                        style: {originX: '100%'},
-                      })}
-                    />
+                    <motion.div
+                      initial={{scaleX: 0.1}}
+                      animate={{scaleX: 1}}
+                      exit={{scaleX: 0.1, transition: {duration: 0.1}}}
+                      transition={{type: 'tween', duration: 0.2}}
+                      style={{width: '100%', originX: '100%'}}
+                    >
+                      <DarkTextInput
+                        {...getInputProps({
+                          placeholder: `Search`,
+                          width: '100%',
+                        })}
+                      />
+                    </motion.div>
                     <DarkButton
                       ml={3}
                       aria-label="Cancel"
                       onClick={handleDismiss}
                     >
-                      <StyledOcticon icon={X} />
+                      <XIcon />
                     </DarkButton>
                   </Flex>
                   {isMenuOpen ? (

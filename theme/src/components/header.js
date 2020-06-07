@@ -1,20 +1,22 @@
-import {Box, Flex, Link, Sticky, StyledOcticon} from '@primer/components'
+import {Box, Flex, Link, Sticky} from '@primer/components'
 import {
-  ChevronRight,
-  MarkGithub,
-  ThreeBars,
-  Search as SearchIcon,
-} from '@primer/octicons-react'
+  ChevronRightIcon,
+  MarkGithubIcon,
+  SearchIcon,
+  ThreeBarsIcon,
+} from '@primer/styled-octicons'
 import {Link as GatsbyLink} from 'gatsby'
 import React from 'react'
 import {ThemeContext} from 'styled-components'
 import primerNavItems from '../primer-nav.yml'
 import useSiteMetadata from '../use-site-metadata'
 import DarkButton from './dark-button'
+import MobileSearch from './mobile-search'
 import NavDrawer, {useNavDrawerState} from './nav-drawer'
 import NavDropdown, {NavDropdownItem} from './nav-dropdown'
 import Search from './search'
-import MobileSearch from './mobile-search'
+
+export const HEADER_HEIGHT = 66
 
 function Header({isSearchEnabled}) {
   const theme = React.useContext(ThemeContext)
@@ -26,7 +28,7 @@ function Header({isSearchEnabled}) {
   return (
     <Sticky>
       <Flex
-        py={3}
+        height={HEADER_HEIGHT}
         px={[3, null, null, 4]}
         alignItems="center"
         justifyContent="space-between"
@@ -39,7 +41,7 @@ function Header({isSearchEnabled}) {
             mr={3}
             lineHeight="condensedUltra"
           >
-            <StyledOcticon icon={MarkGithub} size="medium" />
+            <MarkGithubIcon size="medium" />
           </Link>
           <Link
             display={[
@@ -59,7 +61,7 @@ function Header({isSearchEnabled}) {
           {siteMetadata.shortName ? (
             <>
               <Box display={['none', null, null, 'inline-block']} mx={2}>
-                <StyledOcticon icon={ChevronRight} color="blue.4" />
+                <ChevronRightIcon color="blue.4" />
               </Box>
               <Link as={GatsbyLink} to="/" color="blue.4" fontFamily="mono">
                 {siteMetadata.shortName}
@@ -85,7 +87,7 @@ function Header({isSearchEnabled}) {
                   aria-expanded={isMobileSearchOpen}
                   onClick={() => setIsMobileSearchOpen(true)}
                 >
-                  <StyledOcticon icon={SearchIcon} />
+                  <SearchIcon />
                 </DarkButton>
                 <MobileSearch
                   isOpen={isMobileSearchOpen}
@@ -99,7 +101,7 @@ function Header({isSearchEnabled}) {
               onClick={() => setIsNavDrawerOpen(true)}
               ml={3}
             >
-              <StyledOcticon icon={ThreeBars} />
+              <ThreeBarsIcon />
             </DarkButton>
             <NavDrawer
               isOpen={isNavDrawerOpen}
@@ -124,7 +126,7 @@ function PrimerNavItems({items}) {
           return (
             <Box ml={4} key={index}>
               <NavDropdown title={item.title}>
-                {item.children.map(child => (
+                {item.children.map((child) => (
                   <NavDropdownItem key={child.title} href={child.url}>
                     {child.title}
                   </NavDropdownItem>

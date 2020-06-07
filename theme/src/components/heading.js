@@ -1,14 +1,16 @@
-import {Heading, Link, StyledOcticon} from '@primer/components'
-import {Link as LinkIcon} from '@primer/octicons-react'
+import {Heading, Link} from '@primer/components'
+import {LinkIcon} from '@primer/styled-octicons'
 import themeGet from '@styled-system/theme-get'
 import GithubSlugger from 'github-slugger'
 import React from 'react'
 import textContent from 'react-addons-text-content'
 import styled from 'styled-components'
+import {HEADER_HEIGHT} from './header'
 
 const StyledHeading = styled(Heading)`
   margin-top: ${themeGet('space.4')};
   margin-bottom: ${themeGet('space.3')};
+  scroll-margin-top: ${HEADER_HEIGHT + 24}px;
 
   & .octicon-link {
     visibility: hidden;
@@ -34,11 +36,7 @@ function MarkdownHeading({children, ...props}) {
         color="gray.8"
         aria-label={`${text} permalink`}
       >
-        <StyledOcticon
-          className="octicon-link"
-          icon={LinkIcon}
-          verticalAlign="middle"
-        />
+        <LinkIcon className="octicon-link" verticalAlign="middle" />
       </Link>
       {children}
     </StyledHeading>
@@ -74,9 +72,9 @@ const StyledH6 = styled(StyledHeading).attrs({as: 'h6'})`
   color: ${themeGet('colors.gray.5')};
 `
 
-export const H1 = props => <MarkdownHeading as={StyledH1} {...props} />
-export const H2 = props => <MarkdownHeading as={StyledH2} {...props} />
-export const H3 = props => <MarkdownHeading as={StyledH3} {...props} />
-export const H4 = props => <MarkdownHeading as={StyledH4} {...props} />
-export const H5 = props => <MarkdownHeading as={StyledH5} {...props} />
-export const H6 = props => <MarkdownHeading as={StyledH6} {...props} />
+export const H1 = (props) => <MarkdownHeading as={StyledH1} {...props} />
+export const H2 = (props) => <MarkdownHeading as={StyledH2} {...props} />
+export const H3 = (props) => <MarkdownHeading as={StyledH3} {...props} />
+export const H4 = (props) => <MarkdownHeading as={StyledH4} {...props} />
+export const H5 = (props) => <MarkdownHeading as={StyledH5} {...props} />
+export const H6 = (props) => <MarkdownHeading as={StyledH6} {...props} />

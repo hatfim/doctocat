@@ -57,7 +57,7 @@ function wrapWithFragment(jsx) {
   return `<React.Fragment>${jsx}</React.Fragment>`
 }
 
-function LiveCode({code, language}) {
+function LiveCode({code, language, noinline}) {
   const theme = React.useContext(ThemeContext)
   const [expanded, setExpanded] = React.useState(false);
   const [maxHeight, setMaxHeight] = React.useState(0);
@@ -89,6 +89,7 @@ function LiveCode({code, language}) {
         scope={scope}
         code={code}
         transformCode={languageTransformers[language]}
+        noInline={noinline}
       >
         <LivePreviewWrapper>
           <LivePreview />
